@@ -1,0 +1,8 @@
+[project]
+name = "trae-checkin"
+version = "1.0.0"
+description = "Trae 每日自动签到与积分查询（不忙脚本盒子）"
+requires-python = ">=3.10"
+dependencies = [
+    "cryptography>=41.0",
+]

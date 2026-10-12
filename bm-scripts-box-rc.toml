@@ -1,0 +1,36 @@
+[bmscriptsbox]
+
+[bmscriptsbox.info]
+id = "b7e4f1a2-3c5d-4e6f-8a9b-0c1d2e3f4a5b"
+name = "Trae签到"
+version = "1.0.0"
+desc = "Trae 每日自动签到与积分查询 | 自动提取本机客户端凭证、一键签到、9074 限流自动换设备号、当日去重、积分余额查询、支持定时任务无人值守"
+icon = "./imgs/trae.png"
+
+[bmscriptsbox.runtime]
+language = "python"
+language_version = ">=3.10"
+entry = "main.py"
+terminal = "always"
+
+[[bmscriptsbox.params]]
+name = "action"
+label = "执行动作"
+type = "str"
+default = "checkin"
+choices = ["checkin", "credit"]
+choice_labels = { checkin = "每日签到", credit = "积分查询" }
+description = "checkin=执行签到; credit=只读查询积分余额"
+
+[[bmscriptsbox.params]]
+name = "storage_path"
+label = "登录文件路径"
+type = "str"
+default = ""
+description = "手动兜底：Trae 客户端 storage.json 路径。留空自动探测本机常见目录"
+
+[bmscriptsbox.schedule]
+enabled = true
+
+[bmscriptsbox.params_form]
+enabled = true
